@@ -6,7 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <p>add contact</p>
+    <h1>Add Contact</h1>
+    <form action="/handleAddContact" method="POST">
+        <label>Name: </label>
+        <input type="text" name="contact-name"><br>
+
+        <label>Number: </label>
+        <input type="text" name="contact-number"><br>
+        <button type="submit">Add Contact</button>
+
+    </form>
 
     <p><a href="/">back to home</a></p>
 

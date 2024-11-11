@@ -12,5 +12,13 @@ def home():
 def add_contact():
     return render_template("add_contact.html")
 
+@app.route("/handleAddContact", methods=["POST"])
+def handleAddContact():
+
+    name = request.form["contact-name"]
+    number = request.form["contact-number"]
+
+    return f"Contact Name:{name}\t Contact Number:{number}"
+
 if __name__ == "__main__":
     app.run(debug=True, port=80, host="0.0.0.0")
