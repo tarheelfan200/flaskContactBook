@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Delete Contact</h1>
 
-    <h1>Contacts: </h1>
+    <h2>Contacts: </h2>
     <p>
         {% for contact in contacts %}
 
@@ -17,7 +18,14 @@
         {% endfor %}
     </p>
 
-    <p><a href="/">back to home</a></p>
 
+    <form action="/handleDeleteContact" method="POST">
+        <label>Enter Number of Contact to Delete</label>
+        <input name="contact-number" min="1" step="1">
+
+        <input type="submit">
+    </form>
+
+    <p><a href="/">go home instead</a></p>
 </body>
 </html>
