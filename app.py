@@ -43,12 +43,25 @@ def delete_contact():
 @app.route("/handleDeleteContact", methods=["POST"])
 def handleDeleteContact():
 
-    contactNumber = int(request.form.get("contact-number"))
-    contacts.pop(contactNumber - 1)
+    contact_number_input = request.form.get("contact-number")
+    if not contact_number_input.isdigit():
+        return render_template("/delete_contact.html", contacts=contacts, error="Please enter a valid number")
 
+    contact_number = int(contact_number_input)
+
+    # Checks if contacts list is empty - if empty promp user no contact to delete
+    if not contacts:
+        return render_template("/delete_contact.html", contacts=contacts, error="No contacts to delete.")
+    
+    # Check if contact_number is within range - if contact number is not within range return page until user enters appropriate number
+    if contact_number < 1 or contact_number > len(contacts):
+        return render_template("/delete_contact.html", contacts=contacts, error="Contact number does not exist")
+
+
+    contacts.pop(contact_number-1)
 
     return render_template("/home.html")
-    
+ 
 
 
 if __name__ == "__main__":
