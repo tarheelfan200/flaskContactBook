@@ -15,7 +15,7 @@ def add_contact():
     return render_template("add_contact.html")
 
 @app.route("/handleAddContact", methods=["POST"])
-def handleAddContact(): #commit test
+def handleAddContact(): #commit test2
 
     name = request.form.get("contact-name")
     number = request.form.get("contact-number")
