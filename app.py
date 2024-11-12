@@ -15,7 +15,6 @@ def home():
 
 @app.route("/show_contacts")
 def showContacts():
-
     return render_template("/show_contacts.html", contacts = contacts)
 
 
