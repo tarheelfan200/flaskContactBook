@@ -11,6 +11,8 @@ def home():
     return render_template("/home.html")
 
 
+
+
 @app.route("/show_contacts")
 def showContacts():
 
@@ -49,7 +51,7 @@ def handleDeleteContact():
 
     contact_number = int(contact_number_input)
 
-    # Checks if contacts list is empty - if empty promp user no contact to delete
+    # Checks if contacts list is empty - if empty prompt user no contact to delete
     if not contacts:
         return render_template("/delete_contact.html", contacts=contacts, error="No contacts to delete.")
     
