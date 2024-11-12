@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "$(date): quick update"
+git commit -m "Quick update"
 git push origin main
