@@ -6,7 +6,7 @@ body{
     background-color: whitesmoke;
 }
 
-#name-div, #number-div, #button-div, #to-home-div, #contacts-title, #contacts, #delete_contacts, #errors{
+#name-div, #number-div, #button-div, #to-home-div, #contacts-title, #contacts, #delete_contacts, #error{
     display:flex;
     justify-content: center;
     align-items: center;
