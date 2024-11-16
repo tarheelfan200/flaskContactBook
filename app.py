@@ -1,6 +1,6 @@
 # flask app where users can add, view, and delete contacts
 
-from flask import Flask, redirect, render_template, request
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -52,11 +52,11 @@ def handleDeleteContact():
 
     # Checks if contacts list is empty - if empty prompt user no contact to delete
     if not contacts:
-        return render_template("/delete_contact.html", contacts=contacts, error="No contacts to delete.")
+        return render_template("/delete_contact.html", contacts=contacts, error="No contacts you silly goose.")
     
     # Check if contact_number is within range - if contact number is not within range return page until user enters appropriate number
     if contact_number < 1 or contact_number > len(contacts):
-        return render_template("/delete_contact.html", contacts=contacts, error="Contact number does not exist")
+        return render_template("/delete_contact.html", contacts=contacts, error="Add a number first!!")
 
 
     contacts.pop(contact_number-1)
